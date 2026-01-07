@@ -37,6 +37,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 先把远端最新变更拉下来，避免 refs 冲突
+          git pull --rebase
+
           git add data.json
-          git diff --staged --quiet || git commit -m "auto: update data.json"
-          git push
+          if git diff --staged --quiet; then
+          echo "No changes to commit."
+        fi
+
+        git commit -m "auto: update data.json"
+        git push
