@@ -3,7 +3,6 @@ name: Update data.json
 on:
   workflow_dispatch: {}
   schedule:
-    # 每天 08:30（广州 UTC+8）= UTC 00:30
     - cron: "30 0 * * *"
 
 permissions:
@@ -19,6 +18,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Sync with remote
+        run: |
+          git pull --rebase
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -39,9 +42,6 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 先同步远端最新提交，避免 failed to push some refs
-          git pull --rebase
 
           git add data.json
           if git diff --staged --quiet; then
