@@ -284,6 +284,75 @@ const builtinPlaces = [
  * }
  */
 let onlineItems = [];
+// ===== 去过夹子（本地存储）=====
+const VISITED_KEY = "gz_weekend_visited_v1";
+
+function loadVisited() {
+  try {
+    const raw = localStorage.getItem(VISITED_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return new Set(Array.isArray(arr) ? arr : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveVisited(setObj) {
+  const arr = Array.from(setObj);
+  localStorage.setItem(VISITED_KEY, JSON.stringify(arr));
+}
+
+function itemKey(it) {
+  // 用 link 优先，其次 name+area；保证相对稳定
+  if (it.link) return `link:${it.link}`;
+  return `na:${it.name || ""}@@${it.area || ""}`;
+}
+
+function isSeasonalSpecial(it) {
+  const tags = it.tags || [];
+  const text = (it.name || "") + " " + (it.notes || "") + " " + tags.join(" ");
+  const specialWords = ["花期", "赏花", "看花", "限定", "季节限定", "夜游", "灯会", "节日", "樱花", "梅花", "荷花", "红叶", "草莓", "禾雀花"];
+  return specialWords.some(w => text.includes(w));
+}
+
+let visitedSet = loadVisited();
+
+function markVisited(it) {
+  visitedSet.add(itemKey(it));
+  saveVisited(visitedSet);
+  render();
+}
+
+function unmarkVisited(it) {
+  visitedSet.delete(itemKey(it));
+  saveVisited(visitedSet);
+  render();
+}
+
+function isVisited(it) {
+  return visitedSet.has(itemKey(it));
+}
+
+function findItemByKey(k) {
+  const all = [...builtinPlaces, ...onlineItems];
+  for (const it of all) {
+    if (itemKey(it) === k) return it;
+  }
+  return null;
+}
+
+function markVisitedByKey(k) {
+  const it = findItemByKey(k);
+  if (!it) return;
+  markVisited(it);
+}
+
+function unmarkVisitedByKey(k) {
+  const it = findItemByKey(k);
+  if (!it) return;
+  unmarkVisited(it);
+}
+
 let dataMeta = null;
 
 function getPrefs(){
