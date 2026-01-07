@@ -180,7 +180,7 @@
  * 纯自动更新：把 DATA_URL 换成你自己的 data.json 地址（GitHub Pages / 任何静态站）
  * data.json 的 schema：见 buildItem() 注释
  */
-const DATA_URL = ""; // 例如：https://<你的域名>/data.json （留空表示只用内置数据）
+const DATA_URL = new URL("./data.json", window.location.href).toString(); // 例如：https://<你的域名>/data.json （留空表示只用内置数据）
 
 /** 内置“长期地点库”（偏体验，不靠打卡） */
 const builtinPlaces = [
