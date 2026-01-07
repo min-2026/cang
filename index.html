@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>周末去哪儿｜广州（两人·公共交通版）</title>
+  <style>
+    :root { --bg:#0b0c10; --card:#14161c; --text:#e8e8ea; --muted:#a9abb3; --line:#252834; --chip:#1b1f2a; --good:#b6f3c5; }
+    body{ margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+      background:var(--bg); color:var(--text); }
+    header{ padding:18px 16px 10px; position:sticky; top:0; background:linear-gradient(180deg, rgba(11,12,16,.98), rgba(11,12,16,.86)); backdrop-filter: blur(8px); border-bottom:1px solid var(--line); z-index:10;}
+    h1{ margin:0 0 6px; font-size:18px; }
+    .sub{ color:var(--muted); font-size:12px; line-height:1.45; }
+    .wrap{ padding:12px 16px 24px; max-width:1100px; margin:0 auto; }
+    .grid{ display:grid; grid-template-columns: 1fr; gap:10px; }
+    .panel{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; }
+    .row{ display:flex; gap:10px; flex-wrap:wrap; }
+    label{ font-size:12px; color:var(--muted); display:flex; flex-direction:column; gap:6px; }
+    select,input[type="text"]{ background:#0f1117; border:1px solid var(--line); color:var(--text);
+      border-radius:10px; padding:8px 10px; min-width:150px; }
+    input[type="checkbox"]{ transform: scale(1.05); }
+    .chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .chip{ background:var(--chip); border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; color:var(--muted); }
+    .card{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:12px; }
+    .title{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+    .name{ font-weight:700; font-size:15px; line-height:1.25; }
+    .score{ font-size:12px; color:var(--good); border:1px solid #2b6b3d; background:rgba(31, 90, 52, .25); padding:4px 8px; border-radius:999px; white-space:nowrap; }
+    .meta{ margin-top:6px; color:var(--muted); font-size:12px; line-height:1.55; }
+    .k{ color:#d7d7db; }
+    .sep{ height:1px; background:var(--line); margin:10px 0; }
+    .tiny{ font-size:11px; color:var(--muted); line-height:1.55; }
+    .actions{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
+    button{ cursor:pointer; border-radius:12px; padding:8px 10px; border:1px solid var(--line); background:#0f1117; color:var(--text); font-size:12px; }
+    button:hover{ border-color:#3a3f53; }
+    .badge{ font-size:11px; border:1px solid var(--line); padding:3px 8px; border-radius:999px; color:var(--muted); }
+    .warn{ color:#ffd7a8; border-color:#7b5a2a; background:rgba(120,85,30,.25); }
+    .ok{ color:#b6f3c5; border-color:#2b6b3d; background:rgba(31, 90, 52, .22); }
+    @media(min-width:920px){ .grid{ grid-template-columns: 420px 1fr; } }
+  </style>
+</head>
+<body>
+<header>
+  <h1>周末去哪儿｜广州（两人·公共交通/打车版）</h1>
+  <div class="sub">
+    长期使用版：少“拍照打卡”，更偏散步/轻徒步/展馆/听演出。支持季节、天气敏感度、人流/蚊虫/补给/照明/预约等维度。
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="panel">
+      <div class="row">
+        <label>
+          出发地（可选）
+          <input id="origin" type="text" placeholder="如：萝岗/香雪/科学城（仅用于提示）" />
+        </label>
+
+        <label>
+          单程时间预算
+          <select id="timeBudget">
+            <option value="30">≤ 30 分钟</option>
+            <option value="45" selected>≤ 45 分钟</option>
+            <option value="60">≤ 60 分钟</option>
+            <option value="90">≤ 90 分钟</option>
+            <option value="120">≤ 120 分钟</option>
+          </select>
+        </label>
+
+        <label>
+          强度
+          <select id="intensity">
+            <option value="low">低（散步/平路）</option>
+            <option value="mid" selected>中（轻徒步/缓坡）</option>
+            <option value="high">高（爬山/拉练）</option>
+          </select>
+        </label>
+
+        <label>
+          出行方式偏好
+          <select id="transitPref">
+            <option value="easy" selected>省心优先（少换乘）</option>
+            <option value="balanced">平衡</option>
+            <option value="hard">不介意换乘</option>
+          </select>
+        </label>
+
+        <label>
+          预算（两人）
+          <select id="budget">
+            <option value="low" selected>低（0-60）</option>
+            <option value="mid">中（60-160）</option>
+            <option value="high">高（160+）</option>
+          </select>
+        </label>
+
+        <label>
+          季节
+          <select id="season">
+            <option value="any" selected>不指定</option>
+            <option value="spring">春（看花/最舒适）</option>
+            <option value="summer">夏（避晒/避闷）</option>
+            <option value="autumn">秋（最适合长走）</option>
+            <option value="winter">冬（更适合户外）</option>
+          </select>
+        </label>
+
+        <label>
+          天气
+          <select id="weather">
+            <option value="any" selected>不确定</option>
+            <option value="sun">晴/热</option>
+            <option value="rain">雨天</option>
+            <option value="cold">降温/大风</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="sep"></div>
+
+      <div class="row">
+        <label style="flex-direction:row; align-items:center; gap:8px;">
+          <input id="avoidCrowd" type="checkbox" checked />
+          <span>尽量避开人挤人</span>
+        </label>
+
+        <label style="flex-direction:row; align-items:center; gap:8px;">
+          <input id="avoidCheckin" type="checkbox" checked />
+          <span>降权网红打卡属性</span>
+        </label>
+
+        <label style="flex-direction:row; align-items:center; gap:8px;">
+          <input id="preferIndoorOnHot" type="checkbox" checked />
+          <span>闷热/暴晒偏室内</span>
+        </label>
+
+        <label style="flex-direction:row; align-items:center; gap:8px;">
+          <input id="careMosquito" type="checkbox" />
+          <span>很怕蚊虫（春夏）</span>
+        </label>
+
+        <label style="flex-direction:row; align-items:center; gap:8px;">
+          <input id="careToilet" type="checkbox" checked />
+          <span>重视厕所/补给</span>
+        </label>
+
+        <label style="flex-direction:row; align-items:center; gap:8px;">
+          <input id="careLighting" type="checkbox" checked />
+          <span>重视傍晚照明/安全</span>
+        </label>
+
+        <label style="flex-direction:row; align-items:center; gap:8px;">
+          <input id="avoidReservation" type="checkbox" />
+          <span>尽量不预约</span>
+        </label>
+      </div>
+
+      <div class="sep"></div>
+      <div class="tiny" id="dataStatus">数据：加载中…（地点库内置 + 可自动拉取线上活动库）</div>
+
+      <div class="actions" style="margin-top:12px;">
+        <button id="btnReset">重置</button>
+        <button id="btnSort">重新排序</button>
+        <button id="btnExport">复制 Top5 给对象</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <div class="k">今日推荐（综合地点 + 本周活动）</div>
+        <div class="chips" id="activeChips"></div>
+      </div>
+      <div style="height:10px"></div>
+      <div id="list" style="display:grid; gap:10px;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/**
+ * 纯自动更新：把 DATA_URL 换成你自己的 data.json 地址（GitHub Pages / 任何静态站）
+ * data.json 的 schema：见 buildItem() 注释
+ */
+const DATA_URL = ""; // 例如：https://<你的域名>/data.json （留空表示只用内置数据）
+
+/** 内置“长期地点库”（偏体验，不靠打卡） */
+const builtinPlaces = [
+  {
+    type: "place",
+    name: "科学城·玉树公园—体育公园—尖峰岭（连走）",
+    area: "黄埔·科学城",
+    tags: ["散步", "林荫", "连走路线", "聊天友好", "半日"],
+    transitEase: 4, // 1-5
+    transferComplexity: 2, // 1(直达)-5(麻烦)
+    timeMin: 25,
+    intensity: "mid",
+    cost: "low",
+    crowdRisk: 2,
+    checkin: 1,
+    weatherFit: { rain:false, sun:true, cold:true },
+    seasonFit: { spring:true, summer:true, autumn:true, winter:true },
+    mosquito: 3, // 1-5
+    toiletSupply: 4, // 1-5
+    lighting: 4, // 1-5
+    reservation: "no",
+    openHoursHint: "公园类一般全天开放（以现场为准）",
+    notes: "三园相连，走起来像城市里的轻徒步，聊天走路很舒服。",
+    source: "builtin"
+  },
+  {
+    type: "place",
+    name: "天鹿湖森林公园（洗肺轻徒步）",
+    area: "黄埔",
+    tags: ["轻徒步", "湖景", "空气好", "半日/全天"],
+    transitEase: 3, transferComplexity: 3, timeMin: 45, intensity:"mid", cost:"low",
+    crowdRisk: 3, checkin:2,
+    weatherFit:{ rain:false, sun:true, cold:true },
+    seasonFit:{ spring:true, summer:true, autumn:true, winter:true },
+    mosquito: 4, toiletSupply: 3, lighting: 3,
+    reservation:"no",
+    openHoursHint:"公园类以现场为准",
+    notes:"适合想出汗但不拉练的一天；春季花期/节假日人会更多。",
+    source:"builtin"
+  },
+  {
+    type: "place",
+    name: "广东省凉茶博物馆（雨天备选）",
+    area: "黄埔·科学城/金峰附近",
+    tags: ["室内", "文化", "雨天", "省心", "半日"],
+    transitEase: 5, transferComplexity: 2, timeMin: 35, intensity:"low", cost:"low",
+    crowdRisk: 2, checkin:2,
+    weatherFit:{ rain:true, sun:true, cold:true },
+    seasonFit:{ spring:true, summer:true, autumn:true, winter:true },
+    mosquito: 1, toiletSupply: 4, lighting: 5,
+    reservation:"maybe",
+    openHoursHint:"以官方公告/现场为准",
+    notes:"雨天/暴晒天很友好：看展+轻松走动，不依赖拍照。",
+    source:"builtin"
+  },
+  {
+    type: "place",
+    name: "广州海事博物馆（雨天慢逛）",
+    area: "黄埔（南海神庙附近）",
+    tags: ["室内", "展馆", "雨天", "慢逛", "半日"],
+    transitEase: 4, transferComplexity: 3, timeMin: 70, intensity:"low", cost:"low",
+    crowdRisk: 2, checkin:1,
+    weatherFit:{ rain:true, sun:true, cold:true },
+    seasonFit:{ spring:true, summer:true, autumn:true, winter:true },
+    mosquito: 1, toiletSupply: 4, lighting: 5,
+    reservation:"maybe",
+    openHoursHint:"以官方公告/现场为准",
+    notes:"节奏舒适，适合不想做攻略的雨天周六。",
+    source:"builtin"
+  }
+];
+
+/**
+ * data.json 合并进来的条目 schema（你纯自动更新时生成）：
+ * {
+ *   "items":[
+ *     {"type":"event","name":"…","area":"…","date":"2026-01-10","timeHint":"19:30-21:00","cost":"mid","reservation":"yes/no/maybe",
+ *      "tags":["展览/演出/活动"],"transitEase":3,"transferComplexity":3,"timeMin":70,"intensity":"low",
+ *      "crowdRisk":3,"checkin":2,"weatherFit":{"rain":true,"sun":true,"cold":true},
+ *      "seasonFit":{"spring":true,"summer":true,"autumn":true,"winter":true},
+ *      "mosquito":1,"toiletSupply":3,"lighting":4,"openHoursHint":"…","notes":"…","link":"https://…","source":"wglj/douban/…"}
+ *   ],
+ *   "meta":{"generatedAt":"2026-01-06T10:00:00+08:00","sources":["…"]}
+ * }
+ */
+let onlineItems = [];
+let dataMeta = null;
+
+function getPrefs(){
+  return {
+    origin: document.getElementById("origin").value.trim(),
+    timeBudget: Number(document.getElementById("timeBudget").value),
+    intensity: document.getElementById("intensity").value,
+    transitPref: document.getElementById("transitPref").value,
+    budget: document.getElementById("budget").value,
+    season: document.getElementById("season").value,
+    weather: document.getElementById("weather").value,
+    avoidCrowd: document.getElementById("avoidCrowd").checked,
+    avoidCheckin: document.getElementById("avoidCheckin").checked,
+    preferIndoorOnHot: document.getElementById("preferIndoorOnHot").checked,
+    careMosquito: document.getElementById("careMosquito").checked,
+    careToilet: document.getElementById("careToilet").checked,
+    careLighting: document.getElementById("careLighting").checked,
+    avoidReservation: document.getElementById("avoidReservation").checked,
+  };
+}
+
+const rankCost = { low:1, mid:2, high:3 };
+
+function seasonKeyToFit(season){
+  if(season==="spring") return "spring";
+  if(season==="summer") return "summer";
+  if(season==="autumn") return "autumn";
+  if(season==="winter") return "winter";
+  return "any";
+}
+
+function scoreItem(it, p){
+  let score = 100;
+
+  // 时间预算：超过则扣分
+  if ((it.timeMin||999) > p.timeBudget) score -= ((it.timeMin - p.timeBudget) * 2.0);
+
+  // 强度匹配
+  if (p.intensity === "low" && it.intensity === "high") score -= 26;
+  if (p.intensity === "low" && it.intensity === "mid") score -= 10;
+  if (p.intensity === "high" && it.intensity === "low") score -= 10;
+
+  // 出行省心：换乘复杂度 + transitEase
+  const tp = p.transitPref;
+  if (tp === "easy"){
+    score += ((it.transitEase||3) - 3) * 7;
+    score -= ((it.transferComplexity||3) - 2) * 6;
+  } else if (tp === "balanced"){
+    score += ((it.transitEase||3) - 3) * 4;
+    score -= ((it.transferComplexity||3) - 3) * 3;
+  } else { // hard
+    score += ((it.transitEase||3) - 3) * 2;
+    score -= ((it.transferComplexity||3) - 3) * 1;
+  }
+
+  // 预算
+  if (rankCost[it.cost||"low"] > rankCost[p.budget]) score -= 18;
+
+  // 季节
+  if (p.season !== "any"){
+    const key = seasonKeyToFit(p.season);
+    if (it.seasonFit && it.seasonFit[key] === false) score -= 18;
+    if (it.tags && key==="spring" && it.tags.includes("看花")) score += 10; // 春季看花加分
+  }
+
+  // 天气
+  if (p.weather !== "any"){
+    const ok = it.weatherFit ? it.weatherFit[p.weather] : true;
+    if (!ok) score -= 28;
+    if (p.weather === "sun" && p.preferIndoorOnHot && it.tags && it.tags.includes("室内")) score += 6;
+  }
+
+  // 避人
+  if (p.avoidCrowd) score -= ((it.crowdRisk||3) - 2) * 7;
+
+  // 避打卡
+  if (p.avoidCheckin) score -= ((it.checkin||2) - 1) * 6;
+
+  // 蚊虫（春夏更敏感）
+  if (p.careMosquito){
+    score -= ((it.mosquito||3) - 2) * 6;
+    if (p.season === "summer") score -= ((it.mosquito||3) - 2) * 2;
+  }
+
+  // 厕所/补给
+  if (p.careToilet) score += ((it.toiletSupply||3) - 3) * 4;
+
+  // 照明/安全（傍晚）
+  if (p.careLighting) score += ((it.lighting||3) - 3) * 4;
+
+  // 预约：不想预约则扣
+  if (p.avoidReservation){
+    if (it.reservation === "yes") score -= 16;
+    if (it.reservation === "maybe") score -= 8;
+  }
+
+  // 活动条目小加成：更“当周可用”
+  if (it.type === "event") score += 6;
+
+  return Math.round(score);
+}
+
+function badges(it){
+  const arr = [];
+  if (it.type === "event") arr.push(`<span class="badge ok">本周活动</span>`);
+  if (it.reservation === "yes") arr.push(`<span class="badge warn">需预约</span>`);
+  if (it.crowdRisk >= 4) arr.push(`<span class="badge warn">人多风险</span>`);
+  if (it.tags && it.tags.includes("室内")) arr.push(`<span class="badge">室内</span>`);
+  if (it.intensity === "high") arr.push(`<span class="badge warn">强度高</span>`);
+  return arr.join(" ");
+}
+
+function render(){
+  const p = getPrefs();
+  const chips = [];
+  chips.push(`单程≤${p.timeBudget}min`);
+  chips.push(p.intensity==="low"?"低强度":p.intensity==="mid"?"中强度":"高强度");
+  chips.push(p.transitPref==="easy"?"省心优先":p.transitPref==="balanced"?"平衡":"不介意换乘");
+  chips.push(p.season==="any"?"不指定季节":p.season);
+  chips.push(p.weather==="any"?"不看天气":p.weather);
+  if (p.avoidCrowd) chips.push("避人");
+  if (p.avoidCheckin) chips.push("避打卡");
+  if (p.careMosquito) chips.push("怕蚊虫");
+  if (p.avoidReservation) chips.push("不想预约");
+  document.getElementById("activeChips").innerHTML = chips.map(c=>`<span class="chip">${escapeHtml(c)}</span>`).join("");
+
+  const all = [...builtinPlaces, ...onlineItems];
+  const ranked = all.map(it=>({ ...it, _score: scoreItem(it,p)})).sort((a,b)=>b._score-a._score);
+
+  const list = document.getElementById("list");
+  list.innerHTML = ranked.map(it => `
+    <div class="card">
+      <div class="title">
+        <div>
+          <div class="name">${escapeHtml(it.name)}</div>
+          <div class="meta">
+            📍<span class="k">${escapeHtml(it.area||"广州")}</span>
+            · ⏱ 约${it.timeMin ?? "?"}分钟单程
+            · 强度：<span class="k">${labelIntensity(it.intensity)}</span>
+            · ${badges(it)}
+          </div>
+        </div>
+        <div class="score">匹配度 ${it._score}</div>
+      </div>
+
+      <div class="chips">${(it.tags||[]).map(t=>`<span class="chip">${escapeHtml(t)}</span>`).join("")}</div>
+
+      ${it.date ? `<div class="meta"><span class="k">时间：</span>${escapeHtml(it.date)} ${escapeHtml(it.timeHint||"")}</div>` : ""}
+
+      <div class="meta"><span class="k">开放/预约：</span>${escapeHtml(it.openHoursHint||"以官方公告/现场为准")}；预约：${escapeHtml(it.reservation||"unknown")}</div>
+
+      <div class="meta"><span class="k">为什么适合：</span>${escapeHtml(it.notes||"")}</div>
+
+      <div class="actions">
+        <button onclick="copyText('${escapeJs(composeShare(it))}')">复制给对象</button>
+        <button onclick="openMap('${escapeJs((it.name||'') + ' ' + (it.area||'广州'))}')">打开地图搜索</button>
+        ${it.link ? `<button onclick="window.open('${escapeJs(it.link)}','_blank')">打开来源</button>` : ""}
+      </div>
+
+      <div class="tiny">来源：${escapeHtml(it.source||"builtin")}</div>
+    </div>
+  `).join("");
+}
+
+function composeShare(it){
+  const bits = [];
+  bits.push(`【${it.type==="event"?"本周活动":"地点"}】${it.name}`);
+  if (it.area) bits.push(`地点：${it.area}`);
+  if (it.date) bits.push(`时间：${it.date} ${it.timeHint||""}`.trim());
+  if (it.notes) bits.push(`理由：${it.notes}`);
+  if (it.openHoursHint) bits.push(`开放/预约：${it.openHoursHint}（预约：${it.reservation||"unknown"}）`);
+  if (it.link) bits.push(`来源：${it.link}`);
+  return bits.join("\n");
+}
+
+function labelIntensity(x){ return x==="low"?"低":x==="mid"?"中":"高"; }
+
+function openMap(q){
+  // 你可以改成高德/百度 scheme；此处用浏览器搜索兜底
+  window.open("https://www.google.com/search?q=" + encodeURIComponent(q + " 广州"), "_blank");
+}
+
+function copyText(t){
+  navigator.clipboard.writeText(t).then(()=>alert("已复制到剪贴板"));
+}
+
+function escapeHtml(str){
+  return String(str ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+}
+function escapeJs(str){
+  return String(str ?? "").replaceAll("\\","\\\\").replaceAll("'","\\'").replaceAll('"','\\"').replaceAll("\n"," ");
+}
+
+// 绑定
+document.getElementById("btnSort").addEventListener("click", render);
+document.querySelectorAll("select,input").forEach(el => el.addEventListener("change", render));
+
+document.getElementById("btnReset").addEventListener("click", () => {
+  document.getElementById("origin").value = "";
+  document.getElementById("timeBudget").value = "45";
+  document.getElementById("intensity").value = "mid";
+  document.getElementById("transitPref").value = "easy";
+  document.getElementById("budget").value = "low";
+  document.getElementById("season").value = "any";
+  document.getElementById("weather").value = "any";
+  document.getElementById("avoidCrowd").checked = true;
+  document.getElementById("avoidCheckin").checked = true;
+  document.getElementById("preferIndoorOnHot").checked = true;
+  document.getElementById("careMosquito").checked = false;
+  document.getElementById("careToilet").checked = true;
+  document.getElementById("careLighting").checked = true;
+  document.getElementById("avoidReservation").checked = false;
+  render();
+});
+
+document.getElementById("btnExport").addEventListener("click", () => {
+  const p = getPrefs();
+  const all = [...builtinPlaces, ...onlineItems];
+  const ranked = all.map(it=>({ ...it, _score: scoreItem(it,p)})).sort((a,b)=>b._score-a._score).slice(0,5);
+  const text = ranked.map((it,i)=>`${i+1}. ${it.type==="event"?"[活动]":"[地点]"} ${it.name}（${it.area||"广州"}）匹配度${it._score}`).join("\n");
+  copyText("本周Top5：\n" + text);
+});
+
+// 加载线上数据
+async function loadOnline(){
+  const el = document.getElementById("dataStatus");
+  if(!DATA_URL){
+    el.textContent = "数据：仅使用内置地点库（如需纯自动更新：把 DATA_URL 改成你的 data.json 地址）";
+    return;
+  }
+  try{
+    const r = await fetch(DATA_URL, { cache:"no-store" });
+    if(!r.ok) throw new Error("HTTP " + r.status);
+    const j = await r.json();
+    onlineItems = Array.isArray(j.items) ? j.items : [];
+    dataMeta = j.meta || null;
+    el.textContent = `数据：已加载线上活动库 ${onlineItems.length} 条` + (dataMeta?.generatedAt ? `（更新于 ${dataMeta.generatedAt}）` : "");
+  }catch(e){
+    el.textContent = "数据：线上活动库加载失败，已回退到内置地点库（检查 DATA_URL 是否可访问）。";
+    onlineItems = [];
+    dataMeta = null;
+  }
+}
+
+(async function init(){
+  await loadOnline();
+  render();
+})();
+</script>
+</body>
+</html>
