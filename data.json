@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "type": "event",
+      "name": "2026年广州文化旅游活动精选1月刊",
+      "area": "广州（全市）",
+      "date": "",
+      "timeHint": "",
+      "cost": "low",
+      "reservation": "maybe",
+      "tags": [
+        "官方资讯",
+        "活动清单"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 75,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 1,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以官方公告/对应活动页面为准",
+      "notes": "官方发布的活动汇总清单，适合用来挑本周/本月节目与展览。",
+      "link": "http://wglj.gz.gov.cn/gzdt/wlzc/content/post_10619462.html",
+      "source": "wglj.gz.gov.cn"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-01-07T19:52:13+08:00",
+    "sources": [
+      "https://wglj.gz.gov.cn/",
+      "https://guangzhou.douban.com/events/week-all",
+      "https://guangzhou.douban.com/events/future-all"
+    ],
+    "notes": "自动生成的广州活动数据（已过滤打卡/探店关键词）。"
+  }
+}
