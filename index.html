@@ -454,6 +454,20 @@ function scoreItem(it, p){
 
   // 活动条目小加成：更“当周可用”
   if (it.type === "event") score += 6;
+  // 已去过：降权/隐藏（但季节限定/特殊景色不强压）
+  const visited = isVisited(it);
+  const special = isSeasonalSpecial(it);
+
+  if (visited) {
+    if (p.hideVisited && !special) {
+      score -= 9999; // 直接沉底，相当于隐藏
+    } else {
+      // 不隐藏则降权，力度可调；special 的降权减半
+      const basePenalty = p.visitedPenalty === "soft" ? 12 : (p.visitedPenalty === "mid" ? 25 : 45);
+      score -= special ? Math.round(basePenalty * 0.5) : basePenalty;
+      if (special) score += 6; // 近期特殊景色给一点补偿
+    }
+  }
 
   return Math.round(score);
 }
