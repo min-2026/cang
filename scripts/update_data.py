@@ -8,6 +8,10 @@ from typing import List, Dict, Any, Tuple, Optional
 import requests
 from bs4 import BeautifulSoup
 
+import fitz  # PyMuPDF
+from urllib.parse import urljoin
+
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36",
     "Accept-Language": "zh-CN,zh;q=0.9",
@@ -27,11 +31,11 @@ DOUBAN_PAGES = [
     ("douban/week-course",     DOUBAN_BASE + "week-course"),      # 最近一周·课程:contentReference[oaicite:9]{index=9}
 ]
 
-GDMUSEUM_HOME = "https://www.gdmuseum.com/"          # 广东省博物馆首页（含“最新活动”）:contentReference[oaicite:10]{index=10}
-GDMUSEUM_ACTIVITY_LIST = "https://www.gdmuseum.com/col108/list"  # “活动”列表页:contentReference[oaicite:11]{index=11}
+GDMUSEUM_HOME = "s://www.gdmuseum.com/"          # 广东省博物馆首页（含“最新活动”）:contentReference[oaicite:10]{index=10}
+GDMUSEUM_ACTIVITY_LIST = "s://www.gdmuseum.com/col108/list"  # “活动”列表页:contentReference[oaicite:11]{index=11}
 
-GZMUSEUM_EXHIBITION_LIST = "https://www.guangzhoumuseum.cn/website_cn/Web/Exhibition/Exhibition.aspx"   # 广州博物馆专题展览列表:contentReference[oaicite:12]{index=12}
-GZMUSEUM_EXHIBITION_PRE = "https://www.guangzhoumuseum.cn/website_cn/Web/Dynamic/Exhibition.aspx"      # 广州博物馆展览预告:contentReference[oaicite:13]{index=13}
+GZMUSEUM_EXHIBITION_LIST = "s://www.guangzhoumuseum.cn/website_cn/Web/Exhibition/Exhibition.aspx"   # 广州博物馆专题展览列表:contentReference[oaicite:12]{index=12}
+GZMUSEUM_EXHIBITION_PRE = "s://www.guangzhoumuseum.cn/website_cn/Web/Dynamic/Exhibition.aspx"      # 广州博物馆展览预告:contentReference[oaicite:13]{index=13}
 
 
 # ===== 过滤规则（你不爱“探店打卡”）=====
@@ -49,6 +53,155 @@ def http_get(url: str, timeout: int = 25) -> str:
     r = requests.get(url, headers=HEADERS, timeout=timeout)
     r.raise_for_status()
     return r.text
+
+def http_get_bytes(url: str, timeout: int = 30) -> bytes:
+    r = requests.get(url, headers=HEADERS, timeout=timeout)
+    r.raise_for_status()
+    return r.content
+
+def extract_pdf_text(pdf_bytes: bytes, max_pages: int = 10) -> str:
+    """
+    从 PDF 提取文本。max_pages 用于限制速度（文旅局清单一般前几页就够）。
+    """
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+    texts = []
+    pages = min(len(doc), max_pages)
+    for i in range(pages):
+        page = doc.load_page(i)
+        t = page.get_text("text") or ""
+        texts.append(t)
+    doc.close()
+    return "\n".join(texts)
+
+def find_pdf_links_in_page(page_url: str) -> List[str]:
+    """
+    打开文旅局页面，找出里面的 PDF 附件链接（尽量宽松匹配）。
+    """
+    html = http_get(page_url)
+    soup = BeautifulSoup(html, "html.parser")
+    pdfs = []
+    for a in soup.select("a"):
+        href = (a.get("href") or "").strip()
+        if not href:
+            continue
+        # 直接指向 pdf
+        if href.lower().endswith(".pdf") or ".pdf?" in href.lower():
+            pdfs.append(urljoin(page_url, href))
+            continue
+        # 有些站点附件是 /download/xxx 但真实是 pdf：这里先收集可疑链接，后面用 Content-Type 判断
+        if any(x in href.lower() for x in ["download", "attach", "附件", "file"]):
+            pdfs.append(urljoin(page_url, href))
+    # 去重
+    seen = set()
+    out = []
+    for u in pdfs:
+        if u in seen:
+            continue
+        seen.add(u)
+        out.append(u)
+    return out
+
+
+def split_events_from_pdf_text(pdf_text: str, source_pdf: str) -> List[Dict[str, Any]]:
+    """
+    把 PDF 文本粗解析为活动条目。
+    策略：
+    - 按行清洗
+    - 识别含日期/时间的行作为起点
+    - 生成 event：name/area/timeHint/notes/link
+    解析不完美也没关系：至少让你在网页里直接看到“具体内容”，不必下载。
+    """
+    lines = [norm(x) for x in pdf_text.splitlines()]
+    lines = [x for x in lines if x and len(x) >= 4]
+
+    # 常见日期模式：1月7日、01月07日、2026年1月7日、1/7、01-07 等
+    date_pat = re.compile(r"(\d{4}年)?\s*\d{1,2}\s*[月/.-]\s*\d{1,2}\s*(日)?")
+    time_pat = re.compile(r"(\d{1,2}:\d{2})\s*[-~—–]\s*(\d{1,2}:\d{2})")
+
+    events = []
+    buf = []
+
+    def flush_buf(buf_lines: List[str]):
+        if not buf_lines:
+            return
+        block = " ".join(buf_lines)
+        # 太短的不当活动
+        if len(block) < 12:
+            return
+
+        # 提取时间提示
+        m_time = time_pat.search(block)
+        time_hint = m_time.group(0) if m_time else ""
+
+        # 提取日期（若有）
+        m_date = date_pat.search(block)
+        date_hint = m_date.group(0) if m_date else ""
+
+        # 粗提取地点（常见关键词：地点/地址/场馆/主办地）
+        area = "广州（见PDF）"
+        m_loc = re.search(r"(地点|地址|场馆)[:：]\s*([^。；;]{4,40})", block)
+        if m_loc:
+            area = norm(m_loc.group(2))
+
+        # 取一个“像标题”的名字：优先块的前半段
+        name = block[:40]
+        # 若块里有“：”，取冒号后更像标题
+        if "：" in block[:30]:
+            name = block.split("：", 1)[1][:40]
+        name = norm(name)
+
+        if looks_bad(name):
+            return
+
+        tags = ["官方清单", "PDF解析"]
+        if "展" in block or "展览" in block: tags.append("展览")
+        if "音乐" in block or "演唱" in block or "音乐会" in block: tags.append("音乐")
+        if "戏剧" in block or "话剧" in block or "舞台" in block: tags.append("戏剧")
+        if "亲子" in block or "儿童" in block: tags.append("亲子")
+        if any(k in block for k in ["花", "花期", "赏花", "梅", "荷", "樱"]): tags.append("看花")
+
+        events.append(make_item(
+            type="event",
+            name=name,
+            area=area,
+            date=norm(date_hint),
+            timeHint=norm(time_hint),
+            cost="low",
+            reservation="maybe",
+            tags=tags,
+            transitEase=3, transferComplexity=3, timeMin=80,
+            intensity="low",
+            crowdRisk=3, checkin=1,
+            openHoursHint="以PDF清单/对应活动页面为准（可能需要预约/购票）",
+            notes=block[:220],   # 把关键信息片段带上，足够你筛选
+            link=source_pdf,
+            source="wglj.gz.gov.cn/pdf"
+        ))
+
+    # 以“出现日期行”作为新块起点
+    for ln in lines:
+        if date_pat.search(ln):
+            flush_buf(buf)
+            buf = [ln]
+        else:
+            # 把相关信息续到当前块
+            if buf:
+                buf.append(ln)
+            else:
+                # 未开始但也许是标题行
+                if len(ln) > 10:
+                    buf = [ln]
+
+        # 控制块长度，避免合并过长
+        if len(buf) >= 6:
+            flush_buf(buf)
+            buf = []
+
+    flush_buf(buf)
+    return events
+
+
+
 
 def norm(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").strip())
@@ -140,6 +293,32 @@ def parse_wglj_schedule_index(limit: int = 25) -> List[Dict[str, Any]]:
                 link=href,
                 source="wglj.gz.gov.cn/hdpq"
             ))
+            # ===== 新增：进入该页面，找 PDF 并解析 =====
+try:
+    pdf_links = find_pdf_links_in_page(href)
+
+    for pdf_url in pdf_links[:3]:  # 每个页面最多解析前 3 个 PDF，防止过慢
+        try:
+            pdf_bytes = http_get_bytes(pdf_url)
+            text = extract_pdf_text(pdf_bytes, max_pages=12)
+
+            # 如果 PDF 是图片扫描版，直接文本会很少，先跳过
+            if len(norm(text)) < 80:
+                continue
+
+            events = split_events_from_pdf_text(
+                text,
+                source_pdf=pdf_url
+            )
+
+            items.extend(events)
+
+        except Exception as e2:
+            print(f"[WGLJ pdf] failed {pdf_url}: {e2}")
+
+except Exception as e1:
+    print(f"[WGLJ page->pdf] failed {href}: {e1}")
+
             if len(items) >= limit:
                 break
     except Exception as e:
