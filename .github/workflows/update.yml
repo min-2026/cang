@@ -3,13 +3,15 @@ name: Update data.json
 on:
   workflow_dispatch: {}
   schedule:
-    # GitHub cron 用 UTC
-    # 你在广州（UTC+8），想每周六 09:00 自动更新
-    # 对应 UTC 时间：周六 01:00
+    # 每天 08:30（广州 UTC+8）= UTC 00:30
     - cron: "30 0 * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-data-json
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -28,23 +30,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4 pymupdf
 
-
       - name: Run updater
         run: |
           python scripts/update_data.py
 
       - name: Commit and push data.json
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 先把远端最新变更拉下来，避免 refs 冲突
+          # 先同步远端最新提交，避免 failed to push some refs
           git pull --rebase
 
           git add data.json
           if git diff --staged --quiet; then
-          echo "No changes to commit."
-        fi
+            echo "No changes to commit."
+            exit 0
+          fi
 
-        git commit -m "auto: update data.json"
-        git push
+          git commit -m "auto: update data.json"
+          git push
