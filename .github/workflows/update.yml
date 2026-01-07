@@ -6,7 +6,7 @@ on:
     # GitHub cron 用 UTC
     # 你在广州（UTC+8），想每周六 09:00 自动更新
     # 对应 UTC 时间：周六 01:00
-    - cron: "0 1 * * 6"
+    - cron: "30 0 * * *"
 
 permissions:
   contents: write
