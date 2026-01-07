@@ -523,11 +523,16 @@ function render(){
 
       <div class="meta"><span class="k">为什么适合：</span>${escapeHtml(it.notes||"")}</div>
 
-      <div class="actions">
-        <button onclick="copyText('${escapeJs(composeShare(it))}')">复制给对象</button>
-        <button onclick="openMap('${escapeJs((it.name||'') + ' ' + (it.area||'广州'))}')">打开地图搜索</button>
-        ${it.link ? `<button onclick="window.open('${escapeJs(it.link)}','_blank')">打开来源</button>` : ""}
-      </div>
+     <div class="actions">
+  <button onclick="copyText('${escapeJs(composeShare(it))}')">复制给对象</button>
+  <button onclick="openMap('${escapeJs((it.name||'') + ' ' + (it.area||'广州'))}')">打开地图搜索</button>
+  ${it.link ? `<button onclick="window.open('${escapeJs(it.link)}','_blank')">打开来源</button>` : ""}
+  ${isVisited(it)
+    ? `<button onclick='unmarkVisitedByKey(${JSON.stringify(itemKey(it))})'>↩️ 取消去过</button>`
+    : `<button onclick='markVisitedByKey(${JSON.stringify(itemKey(it))})'>✅ 标记去过</button>`
+  }
+</div>
+
 
       <div class="tiny">来源：${escapeHtml(it.source||"builtin")}</div>
     </div>
