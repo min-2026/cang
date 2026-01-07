@@ -293,28 +293,31 @@ def parse_wglj_schedule_index(limit: int = 25) -> List[Dict[str, Any]]:
                 link=href,
                 source="wglj.gz.gov.cn/hdpq"
             ))
-            # ===== 新增：进入该页面，找 PDF 并解析 =====
+# ===== 新增：进入该页面，找 PDF 并解析 =====
+pdf_links = []
 try:
     pdf_links = find_pdf_links_in_page(href)
+except Exception as e:
+    print(f"[WGLJ page->pdf] failed to find pdfs {href}: {e}")
 
-    for pdf_url in pdf_links[:3]:  # 每个页面最多解析前 3 个 PDF，防止过慢
-        try:
-            pdf_bytes = http_get_bytes(pdf_url)
-            text = extract_pdf_text(pdf_bytes, max_pages=12)
+for pdf_url in pdf_links[:3]:  # 每个页面最多解析前 3 个 PDF
+    try:
+        pdf_bytes = http_get_bytes(pdf_url)
+        text = extract_pdf_text(pdf_bytes, max_pages=12)
 
-            # 如果 PDF 是图片扫描版，直接文本会很少，先跳过
-            if len(norm(text)) < 80:
-                continue
+        # PDF 是图片扫描版时，文本会非常少
+        if len(norm(text)) < 80:
+            continue
 
-            events = split_events_from_pdf_text(
-                text,
-                source_pdf=pdf_url
-            )
+        events = split_events_from_pdf_text(
+            text,
+            source_pdf=pdf_url
+        )
+        items.extend(events)
 
-            items.extend(events)
+    except Exception as e2:
+        print(f"[WGLJ pdf] failed {pdf_url}: {e2}")
 
-        except Exception as e2:
-            print(f"[WGLJ pdf] failed {pdf_url}: {e2}")
 
 except Exception as e1:
     print(f"[WGLJ page->pdf] failed {href}: {e1}")
