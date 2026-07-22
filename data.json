@@ -1910,6 +1910,43 @@
     },
     {
       "type": "event",
+      "name": "快乐大集合｜在社交中解锁双倍快乐与成长密码",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37717357/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
       "name": "【合家欢优惠】亲子儿童互动魔术《魔法笑园》爆笑魔术互动喜剧",
       "area": "广州（见详情）",
       "date": "",
@@ -2091,43 +2128,6 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37837189/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "天河正佳飞扬影城 | 轻松解压｜爆笑互动交友 | 顽笑猴脱口秀",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37590941/",
       "source": "douban/week-all"
     },
     {
@@ -2909,6 +2909,43 @@
     },
     {
       "type": "event",
+      "name": "天河正佳飞扬影城 | 轻松解压｜爆笑互动交友 | 顽笑猴脱口秀",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37590941/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
       "name": "我图周六阿瓦隆",
       "area": "广州（见详情）",
       "date": "",
@@ -2942,43 +2979,6 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37900695/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "广州线下女性成长主题沙龙，和同频女性一起分享力量",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37903402/",
       "source": "douban/week-all"
     },
     {
@@ -3020,7 +3020,44 @@
     },
     {
       "type": "event",
-      "name": "心理成长训练工作坊：告别关系内耗，与自我和解",
+      "name": "广州线下女性成长主题沙龙，和同频女性一起分享力量",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37903402/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
+      "name": "心理成长训练工作坊：深度溯源各类情感关系，告别自我内耗",
       "area": "广州（见详情）",
       "date": "",
       "timeHint": "",
@@ -3168,6 +3205,43 @@
     },
     {
       "type": "event",
+      "name": "为了不再忘记——《无可比拟：西妮德•奥康纳回忆录》新书分享会",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37904404/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
       "name": "【合家欢特惠】周末遛娃丨亲子儿童互动魔术《许愿神灯》丨家庭温馨喜剧丨野生神奇剧场",
       "area": "广州（见详情）",
       "date": "",
@@ -3279,6 +3353,43 @@
     },
     {
       "type": "event",
+      "name": "舞剧《英歌》（海外巡演版）",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37820592/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
       "name": "法国二十世纪早期钢琴作品专场——张宁师生钢琴音乐会",
       "area": "广州（见详情）",
       "date": "",
@@ -3353,6 +3464,43 @@
     },
     {
       "type": "event",
+      "name": "声声不息·港乐经典金曲演唱会",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37724385/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
       "name": "三脚猪喜剧 | 残酷开放麦：观众举牌决定演员讲多久",
       "area": "广州（见详情）",
       "date": "",
@@ -3423,80 +3571,6 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37745660/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "【周二电影院】《像我这样的爱情》",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37903941/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "声声不息·港乐经典金曲演唱会",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37724385/",
       "source": "douban/week-all"
     },
     {
@@ -3797,43 +3871,6 @@
     },
     {
       "type": "event",
-      "name": "静谧灵动之间 哈他瑜伽 July HATHA YOGA",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37893239/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
       "name": "长期有效】单口喜剧笑果课程｜成为脱口秀演员培训班招",
       "area": "广州（见详情）",
       "date": "",
@@ -4019,6 +4056,43 @@
     },
     {
       "type": "event",
+      "name": "静谧灵动之间 哈他瑜伽 July HATHA YOGA",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37893239/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
       "name": "普通人可落地的成交能力｜广州实战销售力提升沙龙",
       "area": "广州（见详情）",
       "date": "",
@@ -4130,6 +4204,43 @@
     },
     {
       "type": "event",
+      "name": "广州 i 人专属｜拒绝无效寒暄｜低耗能社交，慢慢认识同频的人",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37904628/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
       "name": "7月4日 每周六 珠江两岸徒步认识新朋友活动",
       "area": "广州（见详情）",
       "date": "",
@@ -4237,6 +4348,43 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37897748/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
+      "name": "「这桌」广州年轻人社交高地｜遇见同频深度链接｜邂逅有趣的您",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37904642/",
       "source": "douban/week-all"
     },
     {
@@ -4574,43 +4722,6 @@
     },
     {
       "type": "event",
-      "name": "快乐大集合｜在社交中解锁双倍快乐与成长密码",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37717357/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
       "name": "广州｜周末充电计划，每周认识新朋友",
       "area": "广州（见详情）",
       "date": "",
@@ -4833,6 +4944,43 @@
     },
     {
       "type": "event",
+      "name": "广州周末好去处｜撸猫读书畅聊～遇见同频有趣的小伙伴",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37904675/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
       "name": "公益图书馆志愿者 | 为进城务工家庭子女提供阅读支持和服务",
       "area": "广州（见详情）",
       "date": "",
@@ -4940,6 +5088,43 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37871795/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
+      "name": "这可能是你见过的最好的圆桌会了……",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37873668/",
       "source": "douban/week-all"
     },
     {
@@ -5092,80 +5277,6 @@
     },
     {
       "type": "event",
-      "name": "7月5日 周日 海珠湖公园徒步+晚上唱K",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37871819/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "这可能是你见过的最好的圆桌会了……",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37873668/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
       "name": "儿童图书馆志愿者 | 为务工人员子女提供阅读服务",
       "area": "广州（见详情）",
       "date": "",
@@ -5199,6 +5310,43 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37901374/",
+      "source": "douban/week-all"
+    },
+    {
+      "type": "event",
+      "name": "7月5日 周日 海珠湖公园徒步+晚上唱K",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-all"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37871819/",
       "source": "douban/week-all"
     },
     {
@@ -5310,154 +5458,6 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37883797/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "公益心理咨询一小时",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37591327/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "我们的社交怎么了？",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37640189/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "「2026版」中国国家地理·探索 极致发现科学艺术影像展",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37824484/",
-      "source": "douban/week-all"
-    },
-    {
-      "type": "event",
-      "name": "【清远小九寨沟】太和古洞溯溪游泳+白庙渔村打卡北江风光",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-all"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37882125/",
       "source": "douban/week-all"
     },
     {
@@ -5647,43 +5647,6 @@
     },
     {
       "type": "event",
-      "name": "大型光影沉浸式舞台剧《黄埔！黄埔！》",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-drama"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37698826/",
-      "source": "douban/week-drama"
-    },
-    {
-      "type": "event",
       "name": "【二狗旗下】一支麦小剧场新梗赛｜天河正佳广场脱口秀｜爆笑解压精品秀演出｜开心互动&约会推荐｜打卡精选",
       "area": "广州（见详情）",
       "date": "",
@@ -5721,7 +5684,7 @@
     },
     {
       "type": "event",
-      "name": "舞剧《英歌》（海外巡演版）",
+      "name": "舞剧《醒·狮》（海外巡演版）",
       "area": "广州（见详情）",
       "date": "",
       "timeHint": "",
@@ -5753,7 +5716,7 @@
       "lighting": 4,
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37820592/",
+      "link": "https://www.douban.com/event/37820603/",
       "source": "douban/week-drama"
     },
     {
@@ -5791,43 +5754,6 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37331662/",
-      "source": "douban/week-drama"
-    },
-    {
-      "type": "event",
-      "name": "舞剧《醒·狮》（海外巡演版）",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-drama"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37820603/",
       "source": "douban/week-drama"
     },
     {
@@ -5940,6 +5866,80 @@
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37711060/",
       "source": "douban/week-drama"
+    },
+    {
+      "type": "event",
+      "name": "大型光影沉浸式舞台剧《黄埔！黄埔！》",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-drama"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37698826/",
+      "source": "douban/week-drama"
+    },
+    {
+      "type": "event",
+      "name": "「2026版」中国国家地理·探索 极致发现科学艺术影像展",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-exhibition"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37824484/",
+      "source": "douban/week-exhibition"
     },
     {
       "type": "event",
@@ -6313,43 +6313,6 @@
     },
     {
       "type": "event",
-      "name": "天新娱池·派对交友市集·射箭·桌游·狼人杀 (天河新天地店)",
-      "area": "广州（见详情）",
-      "date": "",
-      "timeHint": "",
-      "cost": "mid",
-      "reservation": "maybe",
-      "tags": [
-        "同城活动",
-        "douban/week-exhibition"
-      ],
-      "transitEase": 3,
-      "transferComplexity": 3,
-      "timeMin": 85,
-      "intensity": "low",
-      "crowdRisk": 3,
-      "checkin": 2,
-      "weatherFit": {
-        "rain": true,
-        "sun": true,
-        "cold": true
-      },
-      "seasonFit": {
-        "spring": true,
-        "summer": true,
-        "autumn": true,
-        "winter": true
-      },
-      "mosquito": 1,
-      "toiletSupply": 3,
-      "lighting": 4,
-      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
-      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
-      "link": "https://www.douban.com/event/37694515/",
-      "source": "douban/week-exhibition"
-    },
-    {
-      "type": "event",
       "name": "长乐娱池·派对交友市集·桌游·狼人杀(北京路店)",
       "area": "广州（见详情）",
       "date": "",
@@ -6420,6 +6383,43 @@
       "openHoursHint": "以活动详情页为准（可能需购票/预约）",
       "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
       "link": "https://www.douban.com/event/37496659/",
+      "source": "douban/week-exhibition"
+    },
+    {
+      "type": "event",
+      "name": "天新娱池·派对交友市集·射箭·桌游·狼人杀 (天河新天地店)",
+      "area": "广州（见详情）",
+      "date": "",
+      "timeHint": "",
+      "cost": "mid",
+      "reservation": "maybe",
+      "tags": [
+        "同城活动",
+        "douban/week-exhibition"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 2,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以活动详情页为准（可能需购票/预约）",
+      "notes": "来自豆瓣同城列表，用于补充当周可去的演出/展览/活动。",
+      "link": "https://www.douban.com/event/37694515/",
       "source": "douban/week-exhibition"
     },
     {
@@ -7077,6 +7077,45 @@
     },
     {
       "type": "event",
+      "name": "海丝门户——文物里的清代广州",
+      "area": "广州博物馆（越秀/镇海楼等馆区）",
+      "date": "",
+      "timeHint": "",
+      "cost": "low",
+      "reservation": "maybe",
+      "tags": [
+        "官方场馆",
+        "博物馆",
+        "展览",
+        "室内"
+      ],
+      "transitEase": 3,
+      "transferComplexity": 3,
+      "timeMin": 85,
+      "intensity": "low",
+      "crowdRisk": 3,
+      "checkin": 1,
+      "weatherFit": {
+        "rain": true,
+        "sun": true,
+        "cold": true
+      },
+      "seasonFit": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "mosquito": 1,
+      "toiletSupply": 3,
+      "lighting": 4,
+      "openHoursHint": "以广州博物馆官网展览页面为准",
+      "notes": "官方展览信息（适合雨天/暴晒天）。",
+      "link": "https://www.guangzhoumuseum.cn/website_cn/Web/Dynamic/Exhibition.aspx",
+      "source": "guangzhoumuseum.cn/pre"
+    },
+    {
+      "type": "event",
       "name": "忘记密码 >",
       "area": "广州博物馆（越秀/镇海楼等馆区）",
       "date": "",
@@ -7233,7 +7272,7 @@
     }
   ],
   "meta": {
-    "generatedAt": "2026-07-21T11:58:07+08:00",
+    "generatedAt": "2026-07-22T12:00:35+08:00",
     "sources": [
       "https://wglj.gz.gov.cn/ztmb/gzhyn/hdpq/mindex.html",
       "https://guangzhou.douban.com/events/week-all",
